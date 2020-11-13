@@ -14,4 +14,22 @@ const gamesReducer = (state = initState, action) => {
   }
 };
 
+// EXPLAINATION
+//Action
+// {
+//   type: "FETCH_GAMES";
+// }
+//Action Creator
+// const fetchGame = (userData) => {
+//   return {
+//     type: "FETCH_GAMES",
+//     payload: userData,
+//   };
+// };
+//Dispatch
+// dispatch.fetchGame();
+
+//Thunk
+// allows us to do asyncronous
+
 export default gamesReducer;
