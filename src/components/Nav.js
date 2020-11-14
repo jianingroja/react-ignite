@@ -47,7 +47,7 @@ const StyledNav = styled(motion.nav)`
     margin-top: 1rem;
     border: none;
     outline: none;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 30px rgba(122, 2, 2, 0.315);
     color: #a3480a;
   }
   button {

@@ -35,11 +35,12 @@ const Game = ({ name, released, id, image }) => {
 
 const StyledGame = styled(motion.div)`
   min-height: 30vh;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 20px rgba(151, 151, 151, 0.438);
   text-align: center;
   border-radius: 1rem;
   cursor: pointer;
   overflow: hidden;
+  background-color: #fff7ec;
   img {
     width: 100%;
     height: 40vh;
