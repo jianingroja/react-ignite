@@ -1,3 +1,5 @@
+//Combine Reducers TOgether
+
 import { combineReducers } from "redux";
 
 import gamesReducer from "./gamesReducer";
