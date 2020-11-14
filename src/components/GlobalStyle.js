@@ -14,8 +14,11 @@ html{
     &::-webkit-scrollbar{
         width:0.3rem;
     }
-    &::-webkit-scrollbar-thumb{
-        background-color:dargrey;
+    &::-webkit-scrollbar-thumb {
+    background: indianred;
+    }
+    &::-webkit-scrollbar-track {
+    background: grey;
     }
 }
 body{
