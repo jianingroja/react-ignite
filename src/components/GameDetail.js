@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 //Redux
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+//
+import { smallImage } from "../util";
 
 const GameDetail = () => {
   const history = useHistory();
@@ -11,7 +13,7 @@ const GameDetail = () => {
   const exitDetailHandler = (e) => {
     const element = e.target;
     if (element.classList.contains("shadow")) {
-      document.body.overflow = "auto";
+      document.body.style.overflow = "auto";
       history.push("/");
       //take me back to the homepage when i click on the shadow
     }
@@ -38,14 +40,14 @@ const GameDetail = () => {
               </Info>
             </Stats>
             <Media>
-              <img src={game.background_image} alt="" />
+              <img src={smallImage(game.background_image, 640)} alt="" />
             </Media>
             <Description>
               <p>{game.description_raw}</p>
             </Description>
             <div className="gallery">
               {screen.map((shot) => (
-                <img src={shot.image} key={shot.id} alt="" />
+                <img src={smallImage(shot.image, 1280)} key={shot.id} alt="" />
               ))}
             </div>
           </Detail>
