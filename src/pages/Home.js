@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../action/gamesAction";
 //Components
-import Game from "./components/Game";
+import Game from "../components/Game";
 //Style and Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -24,6 +24,30 @@ const Home = () => {
       <h2>Upcoming Games</h2>
       <Games>
         {upcoming.map((game) => (
+          <Game
+            name={game.name}
+            released={game.released}
+            key={game.id}
+            id={game.id}
+            image={game.background_image}
+          />
+        ))}
+      </Games>
+      <h2>Popular Games</h2>
+      <Games>
+        {popular.map((game) => (
+          <Game
+            name={game.name}
+            released={game.released}
+            key={game.id}
+            id={game.id}
+            image={game.background_image}
+          />
+        ))}
+      </Games>
+      <h2>New Games</h2>
+      <Games>
+        {newGames.map((game) => (
           <Game
             name={game.name}
             released={game.released}
