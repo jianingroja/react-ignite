@@ -13,6 +13,9 @@ import xbox from "../img/xbox.svg";
 import nintendo from "../img/nintendo.svg";
 import apple from "../img/apple.svg";
 import gamepad from "../img/gamepad.svg";
+//Stars Images
+import starEmpty from "../img/star-empty.png";
+import starFull from "../img/star-full.png";
 
 const GameDetail = ({ pathId }) => {
   const history = useHistory();
@@ -24,6 +27,20 @@ const GameDetail = ({ pathId }) => {
       history.push("/");
       //take me back to the homepage when i click on the shadow
     }
+  };
+
+  //Get Stars
+  const getStars = () => {
+    const stars = [];
+    const rating = Math.floor(game.rating);
+    for (let i = 1; i <= 5; i++) {
+      if (i <= rating) {
+        stars.push(<img alt="start" key={i} src={starFull} />);
+      } else {
+        stars.push(<img alt="start" key={i} src={starEmpty} />);
+      }
+    }
+    return stars;
   };
 
   //Get Platform IAMGE
@@ -46,6 +63,7 @@ const GameDetail = ({ pathId }) => {
 
   //Data
   const { screen, game, isLoading } = useSelector((state) => state.detail);
+
   return (
     <>
       {!isLoading && (
@@ -55,6 +73,7 @@ const GameDetail = ({ pathId }) => {
               <div className="rating">
                 <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
                 <p>Rating: {game.rating}</p>
+                {getStars()}
               </div>
               <Info>
                 <h3>Platforms</h3>
@@ -127,6 +146,11 @@ const Stats = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  img {
+    width: 1rem;
+    height: 1rem;
+    display: inline;
+  }
 `;
 
 const Info = styled(motion.div)`
